@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+ 
     function addTask(taskText, save = true) {
         if (taskText.trim() === "") {
             alert("Please enter a task.");
@@ -41,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         storedTasks.push(taskText);
         localStorage.setItem('tasks', JSON.stringify(storedTasks));
     }
-
+e
     function removeTaskFromStorage(taskText) {
         const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
         const index = storedTasks.indexOf(taskText);
@@ -51,12 +52,14 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('tasks', JSON.stringify(storedTasks));
     }
 
+    
     addButton.addEventListener('click', function() {
         const taskText = taskInput.value.trim();
         addTask(taskText);
         taskInput.value = '';
     });
 
+    
     taskInput.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
             const taskText = taskInput.value.trim();
@@ -65,5 +68,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    
     loadTasks();
-});
+})
