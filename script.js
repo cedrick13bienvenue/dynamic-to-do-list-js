@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
         taskInput.value = '';
     });
 
-    taskInput.addEventListener('keypress', function (event) {
+    taskInput.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
             const taskText = taskInput.value.trim();
             addTask(taskText);
