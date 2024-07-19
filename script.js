@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function addTask(taskText, save = true) {
+        if (taskText.trim() === "") {
+            alert("Please enter a task.");
+            return;
+        }
+
         const listItem = document.createElement('li');
         listItem.textContent = taskText;
 
@@ -48,10 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addButton.addEventListener('click', function() {
         const taskText = taskInput.value.trim();
-        if (taskText === "") {
-            alert("Please enter a task.");
-            return;
-        }
         addTask(taskText);
         taskInput.value = '';
     });
@@ -59,10 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
     taskInput.addEventListener('keypress', function (event) {
         if (event.key === 'Enter') {
             const taskText = taskInput.value.trim();
-            if (taskText === "") {
-                alert("Please enter a task.");
-                return;
-            }
             addTask(taskText);
             taskInput.value = '';
         }
